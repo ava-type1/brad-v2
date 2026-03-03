@@ -19,7 +19,7 @@ def send_telegram(text):
         return False
 
 def notify_new_bids():
-    bids = get_unnotified_bids(min_relevance=50)
+    bids = get_unnotified_bids(min_relevance=25)
     if not bids:
         logger.info("No new bids to notify")
         return 0
