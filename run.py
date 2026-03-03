@@ -12,8 +12,7 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(name)s %(levelname
 logger = logging.getLogger("brad-v2")
 
 from core.db import init_db, get_active_bids, get_bid_count
-from core.notifier import notify_new_bids
-from config import DATA_DIR
+from config import DATA_DIR, NOTIFICATIONS_ENABLED
 
 def run_scrapers():
     init_db()
@@ -64,8 +63,8 @@ def run_scrapers():
     # Export to JSON for dashboard
     export_dashboard_data()
     
-    # Send Telegram alerts for new high-relevance bids
-    notified = notify_new_bids()
+    # Individual bid notifications disabled — see NOTIFICATIONS_ENABLED in config.py
+    notified = 0
     
     total_bids = get_bid_count()
     logger.info(f"=== Brad V2 Complete ===")

@@ -8,7 +8,14 @@ DATA_DIR = os.path.join(BASE_DIR, "dashboard", "data")
 # Fort White, FL
 LAT = 29.9402
 LNG = -82.7129
-RADIUS_MILES = 300
+RADIUS_MILES = 200
+
+# Geographic filter — only Florida and South Georgia
+ALLOWED_STATES = {"FL", "GA"}
+SOUTH_GA_MAX_LAT = 32.5  # Anything above this is Metro ATL / North GA — skip it
+
+# Telegram notifications for individual bids — disabled per Kam's request
+NOTIFICATIONS_ENABLED = False
 
 # Telegram
 TELEGRAM_BOT_TOKEN = "8166433961:AAE-Xm475nhcMooL3pH_6lAmK4EdfKNjAXQ"
