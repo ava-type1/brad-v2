@@ -1,0 +1,5 @@
+bids.db
+__pycache__/
+*.pyc
+node_modules/
+.wrangler/
